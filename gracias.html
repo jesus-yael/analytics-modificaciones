@@ -25,26 +25,5 @@
     <p>El costo fue de <script>document.write(localStorage.getItem('precio'))</script></p>
     <button class="boton"><a href="/analytics-modificaciones/">Regresar al inicio</a></button>
     <script src="scripts.js"></script>
-    <script>                
-    dataLayer.push({
-        'event':'Compra',
-        'ecommerce': {
-            'purchase': {
-            'actionField': {
-                'id': localStorage.getItem(idTransaccion),
-                'affiliation':'ADO Internet',
-                'revenue': precio,
-            },
-            'products': [{
-                'id': 'Producto 1',
-                'name': 'Boleto Genérico',
-                'price': '10',
-                'brand': 'Boletos ADO',
-                'category': 'Largo Recorrido',
-                "quantity": localStorage.getItem(numeroBoletos)
-            }]
-            }
-        }
-        });</script>
 </body>
 </html>
