@@ -37,7 +37,7 @@
                 'actionField': {
                     'id': localStorage.getItem('idTransaccion'),
                     'affiliation':'ADO Internet',
-                    'revenue': precio,
+                    'revenue': localStorage.getItem('precio'),
                 },
                 'products': [{
                     'id': 'Producto 1',
