@@ -28,7 +28,7 @@
 
     var urlActual = window.location.pathname;
     if(urlActual == '/analytics-modificaciones/gracias.html'){
-        alert('Sí debería jalar la chingadera')
+        alert('ok');
         window.dataLayer.push({
             'event':'Compra',
             'ecommerce': {
