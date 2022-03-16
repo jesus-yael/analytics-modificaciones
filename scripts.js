@@ -22,7 +22,9 @@
 
         if(confirmacion == true) {
             window.location.href = '/analytics-modificaciones/gracias.html'
+        } 
 
+        if(window.location.href == '/analytics-modificaciones/gracias.html'){
             dataLayer.push({
                 'event':'Compra',
                 'ecommerce': {
@@ -43,7 +45,7 @@
                     }
                 }
                 });
-        } 
+        }
         
     }
 
