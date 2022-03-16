@@ -16,7 +16,7 @@
         }
 
         idTransaccion = array;
-        localStorage.setItem('array', array);
+        localStorage.setItem('idTransaccion', idTransaccion);
 
         // Data Layer
 
@@ -35,7 +35,7 @@
             'ecommerce': {
                 'purchase': {
                 'actionField': {
-                    'id': localStorage.getItem(array),
+                    'id': localStorage.getItem(idTransaccion),
                     'affiliation':'ADO Internet',
                     'revenue': precio,
                 },
