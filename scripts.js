@@ -29,12 +29,13 @@
     var urlActual = window.location.pathname;
     if(urlActual == '/analytics-modificaciones/gracias.html'){
         alert('ok');
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             'event':'Compra',
             'ecommerce': {
                 'purchase': {
                 'actionField': {
-                    'id': localStorage.getItem(idTransaccion),
+                    'id': localStorage.getItem(array),
                     'affiliation':'ADO Internet',
                     'revenue': precio,
                 },
