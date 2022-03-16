@@ -21,7 +21,7 @@ function comprar() {
     // Data Layer
 
     if(confirmacion == true) {
-        window.location.href = 'analytics-modificaciones/gracias.html'
+        window.location.href = '/analytics-modificaciones/gracias.html'
     }
     if(window.location.href == 'analytics-modificaciones/gracias.html'){
         dataLayer.push({
