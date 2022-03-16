@@ -26,7 +26,7 @@
         
     }
 
-    var urlActual = window.location;
+    var urlActual = window.location.pathname;
     if(urlActual == '/analytics-modificaciones/gracias.html'){
         dataLayer.push({
             'event':'Compra',
