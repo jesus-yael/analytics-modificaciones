@@ -23,30 +23,30 @@
         if(confirmacion == true) {
             window.location.href = '/analytics-modificaciones/gracias.html'
         } 
-
-        if(window.location.href == '/analytics-modificaciones/gracias.html'){
-            dataLayer.push({
-                'event':'Compra',
-                'ecommerce': {
-                    'purchase': {
-                    'actionField': {
-                        'id': localStorage.getItem(idTransaccion),
-                        'affiliation':'ADO Internet',
-                        'revenue': precio,
-                    },
-                    'products': [{
-                        'id': 'Producto 1',
-                        'name': 'Boleto Genérico',
-                        'price': '10',
-                        'brand': 'Boletos ADO',
-                        'category': 'Largo Recorrido',
-                        "quantity": localStorage.getItem(numeroBoletos)
-                    }]
-                    }
-                }
-                });
-        }
         
+    }
+
+    if(window.location.href == '/analytics-modificaciones/gracias.html'){
+        dataLayer.push({
+            'event':'Compra',
+            'ecommerce': {
+                'purchase': {
+                'actionField': {
+                    'id': localStorage.getItem(idTransaccion),
+                    'affiliation':'ADO Internet',
+                    'revenue': precio,
+                },
+                'products': [{
+                    'id': 'Producto 1',
+                    'name': 'Boleto Genérico',
+                    'price': '10',
+                    'brand': 'Boletos ADO',
+                    'category': 'Largo Recorrido',
+                    "quantity": localStorage.getItem(numeroBoletos)
+                }]
+                }
+            }
+            });
     }
 
     function modificar() {
