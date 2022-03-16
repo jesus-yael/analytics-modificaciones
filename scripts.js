@@ -28,8 +28,6 @@
 
     var urlActual = window.location.pathname;
     if(urlActual == '/analytics-modificaciones/gracias.html'){
-        alert('ok');
-        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             'event':'Compra',
             'ecommerce': {
@@ -53,5 +51,36 @@
     }
 
     function modificar() {
-        idTransaccion = prompt('¿Cuál es tu ID de transacción?')
+        idTransaccionCancel = prompt('¿Cuál es tu ID de transacción?');
+        boletosComprados = prompt('¿Cuántos boletos compraste?')
+        numeroBoletosCancel = prompt('¿Cuántos boletos quieres cancelar?');
+        boletosPostCancel = boletosComprados - numeroBoletosCancel;
+        precioCancel = boletosPostCancel * 10;
+
+        localStorage.setItem('idTransaccionCancel', idTransaccionCancel);
+        localStorage.setItem('boletosPostCancel', boletosPostCancel);
+        localStorage.setItem('precioCancel', precioCancel);
+
+        if(localStorage.getItem('precioCancel') != null){
+            window.dataLayer.push({
+                'event':'Cancelación',
+                'ecommerce': {
+                    'purchase': {
+                    'actionField': {
+                        'id': localStorage.getItem('idTransaccionCancel'),
+                        'affiliation':'ADO Internet',
+                        'revenue': localStorage.getItem('-' + 'precioCancel'),
+                    },
+                    'products': [{
+                        'id': 'Producto 1',
+                        'name': 'Boleto Genérico',
+                        'price': '10',
+                        'brand': 'Boletos ADO',
+                        'category': 'Largo Recorrido',
+                        "quantity": localStorage.getItem('-' + 'boletosPostCancel')
+                    }]
+                    }
+                }
+                });
+        }
     }
