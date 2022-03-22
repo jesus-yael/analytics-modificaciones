@@ -19,10 +19,19 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4W676M"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <h1>Gracias por tu compra</h1>
-    <p>Tu número de transacción es: <script>document.write(localStorage.getItem('idTransaccion'))</script></p>
-    <p>Compraste <script>document.write(localStorage.getItem('numeroBoletos'))</script> boletos.</p>
-    <p>El costo fue de <script>document.write(localStorage.getItem('precio'))</script></p>
+    <script>
+        if(confirmacion == true){
+            document.write('<h1>Gracias por tu compra</h1>');
+            document.write('<p>Tu número de transacción es: ' + localStorage.getItem('idTransaccion'));
+            document.write('<p>Compraste ' + localStorage.getItem('numeroBoletos') + ' boletos');
+            document.write('<p>El costo fue de ' + localStorage.getItem('precio')); 
+        };
+        if(localStorage.getItem('precioCancel') != null){
+            document.write('<h1>Tus boletos fueron modificados</h1>');
+            document.write('Tus boletos finales son: ' +localStorage.getItem(boletosPostCancel));
+            document.write('Tu precio final es: ' +localStorage.getItem(precioCancel));
+        }
+    </script>
     <button class="boton"><a href="/analytics-modificaciones/">Regresar al inicio</a></button>
     <script src="scripts.js"></script>
 </body>

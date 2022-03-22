@@ -54,12 +54,13 @@
         idTransaccionCancel = prompt('¿Cuál es tu ID de transacción?');
         boletosComprados = prompt('¿Cuántos boletos compraste?')
         numeroBoletosCancel = prompt('¿Cuántos boletos quieres cancelar?');
-        boletosPostCancel = boletosComprados - numeroBoletosCancel;
-        precioCancel = boletosPostCancel * 10;
+        // boletosPostCancel = boletosComprados - numeroBoletosCancel;
+        precioCancel = numeroBoletosCancel * 10;
 
         localStorage.setItem('idTransaccionCancel', idTransaccionCancel);
-        localStorage.setItem('boletosPostCancel', boletosPostCancel);
+        // localStorage.setItem('boletosPostCancel', boletosPostCancel);
         localStorage.setItem('precioCancel', precioCancel);
+        localStorage.setItem('numeroBoletosCancel', numeroBoletosCancel)
 
         if(localStorage.getItem('precioCancel') != null){
             window.dataLayer.push({
@@ -77,10 +78,14 @@
                         'price': '10',
                         'brand': 'Boletos ADO',
                         'category': 'Largo Recorrido',
-                        "quantity": '-' + localStorage.getItem('boletosPostCancel')
+                        "quantity": '-' + localStorage.getItem('numeroBoletosCancel')
                     }]
                     }
                 }
                 });
         }
+
+        if(localStorage.getItem('precioCancel') != null) {
+            window.location.href = '/analytics-modificaciones/gracias.html'
+        } 
     }
