@@ -26,7 +26,7 @@
             document.write('<p>Compraste ' + localStorage.getItem('numeroBoletos') + ' boletos' + '<br>');
             document.write('<p>El costo fue de ' + localStorage.getItem('precio') + '<br>'); 
         };
-        if(localStorage.getItem('precioCancel') != null){
+        if(localStorage.getItem('confirmarCancel') == true){
             document.write('<h1>Tus boletos fueron modificados</h1>' + '<br>');
             document.write('Tus boletos finales son: ' +localStorage.getItem('numeroBoletosCancel') + '<br>');
             document.write('Tu precio final es: ' +localStorage.getItem('precioCancel') + '<br>');

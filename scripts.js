@@ -54,15 +54,17 @@
         idTransaccionCancel = prompt('¿Cuál es tu ID de transacción?');
         boletosComprados = prompt('¿Cuántos boletos compraste?')
         numeroBoletosCancel = prompt('¿Cuántos boletos quieres cancelar?');
+        confirmarCancel = confirm('Vas a cancelar ' + numeroBoletosCancel + ' boleos. ¿Deseas confirmar?')
         // boletosPostCancel = boletosComprados - numeroBoletosCancel;
         precioCancel = numeroBoletosCancel * 10;
 
         localStorage.setItem('idTransaccionCancel', idTransaccionCancel);
         // localStorage.setItem('boletosPostCancel', boletosPostCancel);
         localStorage.setItem('precioCancel', precioCancel);
-        localStorage.setItem('numeroBoletosCancel', numeroBoletosCancel)
+        localStorage.setItem('numeroBoletosCancel', numeroBoletosCancel);
+        localStorage.setItem('confirmarCancel', confirmarCancel);
 
-        if(localStorage.getItem('precioCancel') != null){
+        if(localStorage.getItem('confirmarCancel') == true){
             window.dataLayer.push({
                 'event':'Cancelación',
                 'ecommerce': {
