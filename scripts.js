@@ -87,7 +87,7 @@
                 });
         }
 
-        if(localStorage.getItem('precioCancel') != null) {
+        if(localStorage.getItem('confirmarCancel') == true) {
             window.location.href = '/analytics-modificaciones/gracias.html'
         } 
     }
