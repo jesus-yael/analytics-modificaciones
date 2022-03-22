@@ -69,7 +69,7 @@
                     'actionField': {
                         'id': localStorage.getItem('idTransaccionCancel'),
                         'affiliation':'ADO Internet',
-                        'revenue': localStorage.getItem('-' + 'precioCancel'),
+                        'revenue': '-' + localStorage.getItem('precioCancel'),
                     },
                     'products': [{
                         'id': 'Producto 1',
@@ -77,7 +77,7 @@
                         'price': '10',
                         'brand': 'Boletos ADO',
                         'category': 'Largo Recorrido',
-                        "quantity": localStorage.getItem('-' + 'boletosPostCancel')
+                        "quantity": '-' + localStorage.getItem('boletosPostCancel')
                     }]
                     }
                 }
