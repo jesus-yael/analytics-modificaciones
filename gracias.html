@@ -21,15 +21,15 @@
     <!-- End Google Tag Manager (noscript) -->
     <script>
         if(localStorage.getItem('confirmacion') == true){
-            document.write('<h1>Gracias por tu compra</h1>');
-            document.write('<p>Tu número de transacción es: ' + localStorage.getItem('idTransaccion'));
-            document.write('<p>Compraste ' + localStorage.getItem('numeroBoletos') + ' boletos');
-            document.write('<p>El costo fue de ' + localStorage.getItem('precio')); 
+            document.write('<h1>Gracias por tu compra</h1>' + '<break>');
+            document.write('<p>Tu número de transacción es: ' + localStorage.getItem('idTransaccion') + '<break>');
+            document.write('<p>Compraste ' + localStorage.getItem('numeroBoletos') + ' boletos' + '<break>');
+            document.write('<p>El costo fue de ' + localStorage.getItem('precio') + '<break>'); 
         };
         if(localStorage.getItem('precioCancel') != null){
-            document.write('<h1>Tus boletos fueron modificados</h1>');
-            document.write('Tus boletos finales son: ' +localStorage.getItem(boletosPostCancel));
-            document.write('Tu precio final es: ' +localStorage.getItem(precioCancel));
+            document.write('<h1>Tus boletos fueron modificados</h1>' + '<break>');
+            document.write('Tus boletos finales son: ' +localStorage.getItem(boletosPostCancel) + '<break>');
+            document.write('Tu precio final es: ' +localStorage.getItem(precioCancel) + '<break>');
         }
     </script>
     <button class="boton"><a href="/analytics-modificaciones/">Regresar al inicio</a></button>
