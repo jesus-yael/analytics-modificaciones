@@ -20,7 +20,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <script>
-        if(confirmacion == true){
+        if(localStorage.getItem('confirmacion') == true){
             document.write('<h1>Gracias por tu compra</h1>');
             document.write('<p>Tu número de transacción es: ' + localStorage.getItem('idTransaccion'));
             document.write('<p>Compraste ' + localStorage.getItem('numeroBoletos') + ' boletos');
