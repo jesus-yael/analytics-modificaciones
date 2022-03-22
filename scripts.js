@@ -27,7 +27,7 @@
     }
 
     var urlActual = window.location.pathname;
-    if(urlActual == '/analytics-modificaciones/gracias.html'){
+    if(urlActual == '/analytics-modificaciones/gracias.html' || localStorage.getItem('confirmacion') == true){
         window.dataLayer.push({
             'event':'Compra',
             'ecommerce': {
@@ -64,7 +64,7 @@
         localStorage.setItem('numeroBoletosCancel', numeroBoletosCancel);
         localStorage.setItem('confirmarCancel', confirmarCancel);
 
-        if(localStorage.getItem('confirmarCancel') == true){
+        if(urlActual == '/analytics-modificaciones/gracias.html' || localStorage.getItem('confirmarCancel') == true){
             window.dataLayer.push({
                 'event':'Cancelación',
                 'ecommerce': {
